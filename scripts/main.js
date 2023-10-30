@@ -22,7 +22,6 @@ const btnSalir = document.getElementById("btnSalir");
 const saldoTexto = document.getElementById("saldoTexto");
 const cambioContra = document.getElementById("cambioContra");
 
-
 //Funcion para monstrar el saldo
 function mostrarSaldo() {
   saldoTexto.innerText = `Su saldo actual es de:  ${saldo.toFixed(2)} €`;
@@ -42,7 +41,7 @@ function retirar() {
   }
 }
 
-//Funcion para depositar 
+//Funcion para depositar
 function depositar() {
   const deposito = parseFloat(prompt("Ingresa la cantidad a depositar."));
 
@@ -95,13 +94,14 @@ function iniciarSesion() {
   }
 }
 
-
-function cambioContraseña(){
-  
-
+function cambioContraseña() {
+  const pin = prompt("Introduzca la contraseña actual").value;
+  if (pin === PIN_CORRECTO) {
+    promt("Contraseña incorrecta");
+  } else prompt("Introduzca nueva contraseña");
+  const pin2 = PIN_CORRECTO;
+  pin2 = promt(`Tu contraseña se ha cambiado, y es ${pin2}`).value;
 }
-
-
 
 
 //Funcion para validar que tengas que meter ES y 22 numeros a la hora de transferir dinero
@@ -110,13 +110,12 @@ function validarIBAN(iban) {
   return expresionRegular.test(iban);
 }
 
-
 //Añadir eventos de click para que cuando haga click funcione el boton
 btnDepositar.addEventListener("click", depositar);
 btnRetirar.addEventListener("click", retirar);
 btnTransferir.addEventListener("click", transferir);
 saldoTexto.addEventListener("click", mostrarSaldo);
-cambioContra.addEventListener("click" , cambioContraseña);
+cambioContra.addEventListener("click", cambioContraseña);
 
 btnSalir.addEventListener("click", () => {
   alert("Gracias por usar nuestros servicios.");
