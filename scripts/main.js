@@ -73,7 +73,7 @@ function transferir() {
       `Se han transferido ${monto.toFixed(2)} € a la cuenta ${cuentaDestino}.`
     );
 
-    saldo -= monto;
+    saldo = saldo - monto;
     mostrarSaldo();
   }
 }
