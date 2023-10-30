@@ -20,16 +20,20 @@ const btnDepositar = document.getElementById("btnDepositar");
 const btnTransferir = document.getElementById("btnTransferir");
 const btnSalir = document.getElementById("btnSalir");
 const saldoTexto = document.getElementById("saldoTexto");
+const cambioContra = document.getElementById("cambioContra");
 
+
+//Funcion para monstrar el saldo
 function mostrarSaldo() {
   saldoTexto.innerText = `Su saldo actual es de:  ${saldo.toFixed(2)} €`;
 }
 
+//Funcion para retirar dinero
 function retirar() {
   const retiro = parseFloat(prompt("Ingrese la cantidad para retirar"));
 
   if (isNaN(retiro) || retiro <= 0 || retiro > saldo) {
-    alert("Cantidad invalida o insuficiente, intentelo de nuevo");
+    alert("Cantidad invalida, intentelo de nuevo");
   } else {
     saldo = saldo - retiro;
     alert(`Se ha retirado: ${retiro.toFixed(2)}€`);
@@ -38,6 +42,7 @@ function retirar() {
   }
 }
 
+//Funcion para depositar 
 function depositar() {
   const deposito = parseFloat(prompt("Ingresa la cantidad a depositar."));
 
@@ -51,6 +56,7 @@ function depositar() {
   }
 }
 
+//Funcion para transferir
 function transferir() {
   const monto = parseFloat(prompt("Ingrese la cantidad a transferir ."));
 
@@ -73,6 +79,7 @@ function transferir() {
   }
 }
 
+//Funcion inciar sesion
 function iniciarSesion() {
   let pin = prompt("Ingrese su PIN. ");
 
@@ -88,15 +95,25 @@ function iniciarSesion() {
   }
 }
 
+
+function cambioContraseña(){
+
+}
+
+
+
+
+//Funcion para validar que tengas que meter ES y 22 numeros a la hora de transferir dinero
 function validarIBAN(iban) {
   var expresionRegular = /^(ES\d{22})$/;
   return expresionRegular.test(iban);
 }
 
 btnDepositar.addEventListener("click", depositar);
-//btnRetirar.addEventListener("click", retirar);
+btnRetirar.addEventListener("click", retirar);
 btnTransferir.addEventListener("click", transferir);
 saldoTexto.addEventListener("click", mostrarSaldo);
+cambioContra.addEventListener("click" , cambioContraseña);
 
 btnSalir.addEventListener("click", () => {
   alert("Gracias por usar nuestros servicios.");
