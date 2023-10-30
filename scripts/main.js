@@ -1,7 +1,7 @@
 /*
     Alejandro Ruiz Prieto
 
-    Git Hub: 
+    Git Hub: https://github.com/Alesso-ai/Alejandro_Ruiz_Prieto_Examen-_Tema2.git
 */
 
 /*Carga de toda la pagina, que lo primero que te pides es que inicies sesion
@@ -95,7 +95,7 @@ function iniciarSesion() {
 }
 
 function cambioContraseña() {
-  const pin = prompt("Introduzca la contraseña actual").value;
+  const  pin = prompt("Introduzca la contraseña actual").value;
   if (pin === PIN_CORRECTO) {
     alert("Contraseña incorrecta");
   } else {
