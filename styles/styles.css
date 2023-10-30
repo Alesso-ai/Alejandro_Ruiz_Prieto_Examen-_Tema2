@@ -15,7 +15,7 @@ del cajero automático , colores, posicion, etc etc*/
 }
 
 body {
-  background-color: rgb(161, 198, 230);
+  background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%);
   font-family: TiltNeon;
   display: flex;
   text-align: center;
@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  background-color: aquamarine;
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
