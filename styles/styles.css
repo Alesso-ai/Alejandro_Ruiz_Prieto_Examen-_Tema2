@@ -11,5 +11,33 @@
 body {
     background-color: rgb(161, 198, 230);
     font-family: TiltNeon;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: 50vh;
+    margin-top: 100px;
 
+
+}
+
+.container{
+    background-color: aquamarine;
+    border-radius: 10px;
+    display:flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 500px;   
+    place-content: center;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.container button{
+    background-color: black;
+    color: white;
+    padding: 5px;
+    height: 30px;
+    border-radius: 5px;
 }
