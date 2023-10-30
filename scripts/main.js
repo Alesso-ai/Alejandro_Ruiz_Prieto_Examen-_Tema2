@@ -97,11 +97,20 @@ function iniciarSesion() {
 function cambioContraseña() {
   const pin = prompt("Introduzca la contraseña actual").value;
   if (pin === PIN_CORRECTO) {
-    promt("Contraseña incorrecta");
-  } else prompt("Introduzca nueva contraseña");
-  const pin2 = PIN_CORRECTO;
-  pin2 = promt(`Tu contraseña se ha cambiado, y es ${pin2}`).value;
+    alert("Contraseña incorrecta");
+  } else {
+    prompt("Introduzca nueva contraseña");
+    const pin2 = PIN_CORRECTO;
+  }
+  
+  alert(`Tu contraseña se ha cambiado a ${pin2}`);
 }
+
+
+
+
+
+
 
 
 //Funcion para validar que tengas que meter ES y 22 numeros a la hora de transferir dinero
