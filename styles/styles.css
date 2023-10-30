@@ -52,5 +52,6 @@ body {
 .container button:hover{
     background-color: #393737;
     cursor: pointer;
+    transition: 0.2ms ease; 
 
 }
