@@ -1,55 +1,104 @@
 /*
     Alejandro Ruiz Prieto
 
-    Git Hub :
-*/ 
+    Git Hub: 
+*/
 
+/*Carga de toda la pagina, que lo primero que te pides es que inicies sesion
+con el numero pin*/
+window.addEventListener("load", iniciarSesion);
 
-window.addEventListener("loaded", window);
-
-
-/*Creamos 3 variables 1 constante para el PIN y otras
-2 para el saldo que se ira modificando y otra para los intentos*/
-
-const PIN = "1234";
-let intentos = 3;
+/*Creamos unas variables con el pin fijo por eso es constante
+y otra con el saldo y los intentos*/
+const PIN_CORRECTO = "1234";
 let saldo = 1000;
+let intentos = 3;
 
-
-
-/*Creamos las constantes de los botones para pasarlos despues por id al html*/ 
-const btnDepositar = document.getElementById("btnDepositar");
+/*Creando las constantes para los botones para llamarlas del html*/
 const btnRetirar = document.getElementById("btnRetirar");
+const btnDepositar = document.getElementById("btnDepositar");
 const btnTransferir = document.getElementById("btnTransferir");
-const saldoTexto = document.getElementById("saldoTexto");
 const btnSalir = document.getElementById("btnSalir");
-const btnContraseña = document.getElementById("btnContraseña");
+const saldoTexto = document.getElementById("saldoTexto");
 
-function mostrarSaldo(){
-    const saldo = document.getElementById("saldo")
-
-
-
+function mostrarSaldo() {
+  saldoTexto.innerText = `Su saldo actual es de:  ${saldo.toFixed(2)} €`;
 }
 
+function retirar() {
+  const retiro = parseFloat(prompt("Ingrese la cantidad para retirar"));
 
-function depositar(){
+  if (isNaN(retiro) || retiro <= 0 || retiro > saldo) {
+    alert("Cantidad invalida o insuficiente, intentelo de nuevo");
+  } else {
+    saldo = saldo - retiro;
+    alert(`Se ha retirado: ${retiro.toFixed(2)}€`);
 
+    mostrarSaldo();
+  }
 }
 
-function retirar(){
+function depositar() {
+  const deposito = parseFloat(prompt("Ingresa la cantidad a depositar."));
 
+  if (isNaN(deposito) || deposito <= 0) {
+    alert("Cantidad invalida, intentelo de nuevo");
+  } else {
+    saldo = saldo + deposito;
+    saldoTexto.innerText = `${saldo}`;
+    alert(`Se ha depositado : ${deposito.toFixed(2)}`);
+    mostrarSaldo();
+  }
 }
 
-function transferir(){
+function transferir() {
+  const monto = parseFloat(prompt("Ingrese la cantidad a transferir ."));
 
+  if (isNaN(monto) || monto <= 0 || monto > saldo) {
+    alert("Cantidad invalida o insuficiente a transferir, intetelo de nuevo.");
+  } else {
+    const cuentaDestino = prompt("Ingrese la cuenta a transferir");
+
+    if (!validarIBAN(cuentaDestino)) {
+      alert(`La cuenta ${cuentaDestino} no es una cuenta bancaria válida`);
+
+      return;
+    }
+    alert(
+      `Se han transferido ${monto.toFixed(2)} € a la cuenta ${cuentaDestino}.`
+    );
+
+    saldo -= monto;
+    mostrarSaldo();
+  }
 }
 
+function iniciarSesion() {
+  let pin = prompt("Ingrese su PIN. ");
 
-function  cambioContraseña(){
-
+  while (pin !== PIN_CORRECTO && intentos > 1) {
+    intentos--;
+    alert(`PIN INCORRECTO. Le quedan ${intentos} intentos`);
+    pin = prompt("Ingrese Su PIN. ");
+  }
+  if (pin === PIN_CORRECTO) {
+    mostrarSaldo();
+  } else {
+    window.location.href = "templates/bloqueo.html";
+  }
 }
 
+function validarIBAN(iban) {
+  var expresionRegular = /^(ES\d{22})$/;
+  return expresionRegular.test(iban);
+}
 
+btnDepositar.addEventListener("click", depositar);
+//btnRetirar.addEventListener("click", retirar);
+btnTransferir.addEventListener("click", transferir);
+saldoTexto.addEventListener("click", mostrarSaldo);
 
-
+btnSalir.addEventListener("click", () => {
+  alert("Gracias por usar nuestros servicios.");
+  window.location.href = "/templates/despedida.html";
+});
