@@ -1,8 +1,13 @@
+/*Hemos implementado un tipo de letra a 
+traves de archivos de google fonts*/
+
 @font-face {
     font-family:"TiltNeon";
     src: url("../assets/fonts/TiltNeon-Regular-VariableFont_XROT\,YROT.ttf") format("truetype");
 }
 
+/* A partir de aqui hemos configurado todos los estilos del menu 
+del cajero automático , colores, posicion, etc etc*/
 *{
     padding: 0;
     margin: 0;
@@ -48,6 +53,8 @@ body {
     background-color: white;
     border-radius: 4px;
     width:300px;
+    font-size: 15px;
+    font-family: monospace;
 }
 
 .container button:hover{
