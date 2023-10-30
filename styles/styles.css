@@ -2,64 +2,60 @@
 traves de archivos de google fonts*/
 
 @font-face {
-    font-family:"TiltNeon";
-    src: url("../assets/fonts/TiltNeon-Regular-VariableFont_XROT\,YROT.ttf") format("truetype");
+  font-family: "TiltNeon";
+  src: url("../assets/fonts/TiltNeon-Regular-VariableFont_XROT\,YROT.ttf")
+    format("truetype");
 }
 
 /* A partir de aqui hemos configurado todos los estilos del menu 
 del cajero automático , colores, posicion, etc etc*/
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background-color: rgb(161, 198, 230);
-    font-family: TiltNeon;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    height: 50vh;
-    margin-top: 100px;
-
-
+  background-color: rgb(161, 198, 230);
+  font-family: TiltNeon;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  height: 50vh;
+  margin-top: 100px;
 }
 
-.container{
-    background-color: aquamarine;
-    border-radius: 10px;
-    display:flex;
-    flex-direction: column;
-    gap: 15px;
-    width: 500px;   
-    place-content: center;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-
+.container {
+  background-color: aquamarine;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 500px;
+  place-content: center;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
 }
 
-.container button{
-    background-color: black;
-    color: white;
-    padding: 5px;
-    height: 30px;
-    border-radius: 5px;
-    
+.container button {
+  background-color: black;
+  color: white;
+  padding: 5px;
+  height: 30px;
+  border-radius: 5px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-
-.container span{
-    background-color: white;
-    border-radius: 4px;
-    width:300px;
-    font-size: 15px;
-    font-family: monospace;
+.container span {
+  background-color: white;
+  border-radius: 4px;
+  width: 300px;
+  font-size: 15px;
+  font-family: monospace;
 }
 
-.container button:hover{
-    background-color: #393737;
-    cursor: pointer;
-    transition: 0.2ms ease; 
-
+.container button:hover {
+  background-color: #393737;
+  cursor: pointer;
+  transition: 0.2ms ease;
 }

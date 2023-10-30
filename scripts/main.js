@@ -109,10 +109,6 @@ function cambioContraseña() {
 
 
 
-
-
-
-
 //Funcion para validar que tengas que meter ES y 22 numeros a la hora de transferir dinero
 function validarIBAN(iban) {
   var expresionRegular = /^(ES\d{22})$/;
