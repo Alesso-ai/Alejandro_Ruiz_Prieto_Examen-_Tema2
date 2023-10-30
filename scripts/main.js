@@ -97,6 +97,7 @@ function iniciarSesion() {
 
 
 function cambioContraseña(){
+  
 
 }
 
@@ -109,6 +110,8 @@ function validarIBAN(iban) {
   return expresionRegular.test(iban);
 }
 
+
+//Añadir eventos de click para que cuando haga click funcione el boton
 btnDepositar.addEventListener("click", depositar);
 btnRetirar.addEventListener("click", retirar);
 btnTransferir.addEventListener("click", transferir);
